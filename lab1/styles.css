@@ -1,0 +1,394 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    opacity: 0;
+    background-color: #f4f4f4;
+    animation: fadeIn 1s forwards;
+}
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+header {
+    display: flex;
+    justify-content: center; /* Центрує по горизонталі */
+    align-items: center; /* Центрує по вертикалі */
+    height: 100px; /* Або будь-яка висота */
+    background: #333; /* Колір фону */
+}
+
+.logo {
+    background: url("logo.png") no-repeat center;
+    background-size: contain;
+    text-indent: -9999px; /* Приховує текст */
+    width: 350px; /* Розмір зображення */
+    height: 250px;
+    display: block;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    background: #444;
+    padding: 0px;
+}
+@keyframes gradientAnimation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 80px;
+    margin: 0 0px;
+    background: linear-gradient(135deg, #000000, #000000);
+    border-radius: 0px;
+    transition: background 0.3s, transform 0.2s;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    display: inline-block;
+    font-size: 16px;
+}
+
+/* Анімація збільшення тексту та затемнення фону */
+nav a:hover {
+    text-shadow: 2px 2px black;
+    background: linear-gradient(135deg, #222222, #111111); /* Ледь-сіроватий ухил у чорний */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Анімація збільшення тільки тексту */
+nav a:hover span {
+    display: inline-block;
+    transform: scale(1.1);
+    transition: transform 0.2s ease-in-out;
+}
+
+/* Додаємо текст у span, щоб змінювався тільки він */
+nav a span {
+    display: inline-block;
+    transition: transform 0.2s ease-in-out;
+}
+
+/* Активний стан */
+nav a:active {
+    transform: scale(1.05);
+    text-decoration-color: white;
+    background: linear-gradient(135deg, #ffffff, #ffffff);
+}
+
+.product-card {
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+.product-card:hover {
+    transform: translateY(-5px);
+}
+.products, .profile, .about {
+    padding: 20px;
+}
+
+footer {
+    background: #222;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    margin-top: 20px;
+}
+
+.profile-container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+.profile-header {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 15px;
+}
+.profile-header img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 2px solid #ddd;
+}
+.profile-header h2 {
+    margin: 0;
+}
+.edit-profile {
+    background: #007bff;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.edit-profile:hover {
+    background: #0056b3;
+}
+.profile-section {
+    margin-top: 20px;
+}
+.profile-section h3 {
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 5px;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+table, th, td {
+    border: 1px solid #ddd;
+}
+th, td {
+    padding: 10px;
+    text-align: left;
+}
+
+.advantages {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 10px;
+}
+
+/* Загальні стилі для всіх блоків */
+.advantage {
+    width: 100vw;
+    min-height: 600px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    padding: 50px 10px;
+    box-sizing: border-box;
+    transition: transform 0.3s ease-in-out;
+    text-align: center;
+
+    /* Анімація появи тільки при завантаженні */
+    opacity: 0;
+    transform: translateY(50px);
+    animation: fadeInUp 1s ease-out forwards;
+}
+
+/* Вертикальна лінія перед заголовком */
+.advantage h3 {
+    position: relative;
+    font-size: 28px;
+    font-weight: bold;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.advantage h3::before {
+    content: "";
+    display: block;
+    width: 4px;
+    height: 40px;
+    background-color: white;
+    margin-right: 15px;
+}
+
+.advantage--first {
+    background: url("background_placeholder1_2.jpg") center/cover no-repeat;
+    
+    /* Вирівнюємо текст ліворуч */
+    display: flex;
+    align-items: flex-start; /* Вирівнюємо по верхньому краю */
+    justify-content: flex-start; /* Текст зліва */
+    text-align: left;
+    color: white;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.9);
+    
+    /* Додаємо відступи */
+    padding-left: 5%;
+    padding-right: 10%;
+}
+
+.advantage--second {
+    background: url("background_placeholder2.jpg") center/cover no-repeat;
+    
+    display: flex;
+    color: white;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.9);
+    
+    padding-left: 5%;
+    padding-right: 10%;
+}
+
+.advantage--third {
+    background: url("background_placeholder3.jpg") center/cover no-repeat;
+
+    display: flex;
+    align-items: flex-end; /* Вирівнюємо по верхньому краю */
+    justify-content: flex-end; /* Текст зліва */
+    text-align: right;
+    color: white;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.9);
+    
+    padding-left: 5%;
+    padding-right: 10%;
+}
+
+.advantage--fourth {
+    background: url("background_placeholder4.jpg") center/cover no-repeat;
+    /* Вирівнюємо текст ліворуч */
+    display: flex;
+    align-items: flex-start; /* Вирівнюємо по верхньому краю */
+    justify-content: flex-start; /* Текст зліва */
+    text-align: left;
+    color: white;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.9);
+    
+    /* Додаємо відступи */
+    padding-left: 5%;
+    padding-right: 10%;
+}
+
+.advantage--fifth {
+    background-color: #110f0fec; /*#706a6aec*/
+}
+
+.advantage:hover {
+    transform: scale(1.05); /* Легке збільшення всього блоку */
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.7); /* Тінь */
+}
+
+/* Ефект зближення тексту */
+.advantage h3 {
+    transition: letter-spacing 0.3s ease-in-out;
+}
+
+.advantage:hover h3 {
+    letter-spacing: 2px; /* Текст трохи стискається */
+}
+
+/* Для додаткової чіткості під час зближення */
+.advantage p {
+    transition: transform 0.3s ease-in-out;
+}
+
+.advantage:hover p {
+    transform: scale(1.05); /* Легке збільшення тексту */
+}
+
+/* Анімація при завантаженні сторінки */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+footer {
+    background: #333; /* Темний фон */
+    color: white; /* Білий текст */
+    text-align: center; /* Центрування тексту */
+    padding: 20px; /* Відступи всередині */
+   /* margin-top: 40px; /* Відступ зверху, щоб відділити від контенту */
+}
+
+.footer-container {
+    max-width: 1200px; /* Максимальна ширина */
+    margin: auto; /* Вирівнювання по центру */
+}
+
+/* Для планшетів (ширина до 768px) */
+@media (max-width: 768px) {
+    header {
+        height: 80px; /* Зменшення висоти */
+    }
+
+    .logo {
+        width: 250px; /* Менший логотип */
+        height: 180px;
+    }
+
+    nav {
+        flex-direction: column; /* Меню в стовпчик */
+    }
+
+    nav a {
+        padding: 8px 50px; /* Зменшені відступи */
+        font-size: 14px;
+    }
+
+    .products {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        padding: 100px;
+    }
+
+    .profile-container {
+        max-width: 90%; /* Вужчий контейнер */
+    }
+
+    .advantage {
+        min-height: 450px; /* Менша висота */
+    }
+}
+
+/* Для мобільних пристроїв (ширина до 480px) */
+@media (max-width: 480px) {
+    header {
+        height: 60px;
+        padding: 10px;
+    }
+
+    .logo {
+        width: 200px; /* Ще менший логотип */
+        height: 140px;
+    }
+
+    nav {
+        flex-direction: column;
+    }
+
+    nav a {
+        padding: 6px 30px;
+        font-size: 12px;
+    }
+
+    .products {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); /* Менший мінімальний розмір карток */
+        padding: 50px;
+    }
+
+    .product-card {
+        padding: 10px;
+    }
+
+    .profile-container {
+        padding: 15px;
+    }
+
+    .profile-header img {
+        width: 80px;
+        height: 80px;
+    }
+
+    .advantage {
+        min-height: 350px;
+        padding: 30px 5px;
+    }
+
+    footer {
+        padding: 10px;
+    }
+}
