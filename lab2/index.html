@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MoveX</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="index.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        /* Additional styles for the filter and buttons */
+        .filter-container {
+            margin: 20px auto;
+            text-align: center;
+            padding: 10px;
+            background-color: #f8f8f8;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            max-width: 300px;
+        }
+        
+        .filter-container label {
+            font-weight: 600;
+            margin-left: 10px;
+            cursor: pointer;
+        }
+        
+        .add-to-cart {
+            display: block;
+            width: 100%;
+            padding: 8px 0;
+            margin-top: 10px;
+            background-color: #ff6600;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: background-color 0.3s;
+        }
+        
+        .add-to-cart:hover {
+            background-color: #e55d00;
+        }
+        
+        .add-to-cart.in-cart {
+            background-color: #28a745;
+        }
+        
+        .add-to-cart.disabled {
+            background-color: #6c757d;
+            cursor: not-allowed;
+        }
+        
+        .product-link {
+            display: block;
+            text-decoration: none;
+            color: inherit;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1 class="logo">MOVEX</h1>
+    </header>
+    <nav>
+        <a href="index.html"><span>Products</span></a>
+        <a href="sales.html"><span>Discounts</span></a>
+        <a href="profile.html"><span>Profile</span></a>
+        <a href="about.html"><span>About us</span></a>
+        <a href="cart.html">🛒 Cart (<span id="cart-count">0</span>)</a>
+    </nav>
+    
+    <div class="filter-container">
+        <input type="checkbox" id="show-available-only">
+        <label for="show-available-only">Show Available Products Only</label>
+    </div>
+    
+    <section id="products" class="products">
+        <!-- Product cards will be inserted here by JavaScript -->
+    </section>
+    
+    <footer>
+        <div class="footer-container">
+            <p>&copy; 2025 MoveX – Copyright All Rights Reserved.</p>
+            <p>Contacts: movex_support@gmail.com | +38 (068) 654-32-10</p>
+        </div>
+    </footer>
+
+    <script src="index.js"></script>
+</body>
+</html>
